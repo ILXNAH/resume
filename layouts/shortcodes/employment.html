@@ -1,0 +1,42 @@
+<section id="employment" class="resume-section">
+  <div class="resume-section-content">
+    <h2>Employment History</h2>
+
+    {{- $jobs := (index site.Data "employment") -}}
+    {{- if gt (len $jobs) 0 -}}
+      {{- $sorted := sort $jobs "start" "desc" -}}
+      <div class="employment-list">
+        {{- range $sorted }}
+          {{- $start := .start -}}
+          {{- $end := .end -}}
+          <div class="mb-4">
+            <div class="d-flex justify-content-between flex-wrap">
+              <div>
+                <strong>{{ .role }}</strong>, {{ .company }}
+              </div>
+              <div class="text-muted">
+              {{- if $start -}}{{ $start | time | time.Format "Jan 2006" }}{{- end -}}
+              —
+              {{- if $end -}}{{ $end | time | time.Format "Jan 2006" }}{{ else }}Present{{ end -}}
+              </div>
+            </div>
+
+            {{- if .summary }}
+              <div class="mt-1">{{ .summary }}</div>
+            {{- end }}
+
+            {{- if and .highlights (gt (len .highlights) 0) }}
+              <ul class="mt-2 mb-0">
+                {{- range .highlights }}
+                  <li>{{ . }}</li>
+                {{- end }}
+              </ul>
+            {{- end }}
+          </div>
+        {{- end }}
+      </div>
+    {{- else -}}
+      <p style="opacity:.7;">No employment data found. Ensure <code>data/employment.json</code> exists.</p>
+    {{- end }}
+  </div>
+</section>

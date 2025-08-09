@@ -1,0 +1,84 @@
+[
+  {
+    "role": "Infrastructure Engineer",
+    "company": "Zentity",
+    "start": "2023-09-01",
+    "end": "2024-08-31",
+    "summary": "L2/L3 support for cross-functional projects, deployments, and automation in telco and cloud environments.",
+    "highlights": [
+      "Provided L2/L3 support for high-profile telco vendors.",
+      "Deployed and configured apps on OpenShift and Docker, resolving namespace and configuration challenges.",
+      "Scoped Azure infrastructure components; reviewed firewall and gateway configs.",
+      "Troubleshot CI/CD issues in Jenkins; verified Nexus integration.",
+      "Created and customized Zabbix dashboards for proactive monitoring.",
+      "Developed Python and Bash automation scripts with cron scheduling.",
+      "Diagnosed applications using Postman; managed Nginx reverse proxies and Redis databases.",
+      "Applied ITIL 4® principles to refine DevOps workflows and project handovers."
+    ]
+  },
+  {
+    "role": "Application Administrator & Solution Manager Deputy",
+    "company": "T-Mobile",
+    "start": "2022-05-01",
+    "end": "2023-08-31",
+    "summary": "Enterprise VoIP, Apache server support, and ITSM workflow optimization in a bilingual German environment.",
+    "highlights": [
+      "Provided L2 support for enterprise VoIP infrastructure and Apache web servers.",
+      "Performed RCAs and troubleshooting in German-English environments.",
+      "Managed patches, configurations, and updates on Linux and Oracle SQL DBs.",
+      "Monitored systems with TrueSight and Dynatrace.",
+      "Implemented SSL certificates on Linux servers.",
+      "Streamlined ITSM workflows in HP Service Manager; maintained external KB.",
+      "Coordinated change approvals and implementations.",
+      "Administered user roles in Avaya Genesys."
+    ]
+  },
+  {
+    "role": "Technical Support Engineer (Customer Success)",
+    "company": "Chyron",
+    "start": "2020-12-01",
+    "end": "2022-04-30",
+    "summary": "Server monitoring, system administration, and customer success for media tech software/hardware.",
+    "highlights": [
+      "Monitored 40+ servers via Zabbix and Grafana.",
+      "Managed storage, updates, and upgrades for CentOS and Windows servers.",
+      "Maintained VMware ESXi, ELK Stack, MySQL clusters, and Zabbix.",
+      "Applied configuration changes using Python regex scripting.",
+      "Migrated changes to test/prod environments.",
+      "Provided tech support for EMEA and US teams; acted as primary German POC.",
+      "Managed Customer Success and ITSM in Salesforce.",
+      "Documented procedures in Confluence and G-Suite.",
+      "Acquired expertise in proprietary media software and hardware."
+    ]
+  },
+  {
+    "role": "OpsTech IT Engineer",
+    "company": "Amazon",
+    "start": "2020-07-01",
+    "end": "2020-09-30",
+    "summary": "Remote IT support for B2B/B2C clients, security training, and workstation configuration.",
+    "highlights": [
+      "Provided remote IT support as German POC.",
+      "Configured and troubleshot Windows/Mac workstations, printers, and mobile devices.",
+      "Managed AD accounts, groups, and Group Policy.",
+      "Delivered security awareness training.",
+      "Monitored and tuned systems using Sysmon, Procmon, and PowerShell."
+    ]
+  },
+  {
+    "role": "Network Engineer",
+    "company": "NTT",
+    "start": "2019-04-01",
+    "end": "2020-06-30",
+    "summary": "L1 network support for Cisco environments, incident resolution, and infrastructure monitoring.",
+    "highlights": [
+      "Diagnosed network issues in hardware, software, and communications.",
+      "Provided L1 support and managed on-call rotations as German POC.",
+      "Conducted RCAs and maintained ServiceNow KB.",
+      "Managed ITSM workflows in ServiceNow.",
+      "Monitored infrastructure with Cisco Meraki dashboards.",
+      "Supported network changes and upgrades.",
+      "Studied CCNA R&S topics including IoT, security, and subnetting."
+    ]
+  }
+]
