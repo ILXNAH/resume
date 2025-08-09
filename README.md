@@ -1,4 +1,4 @@
-# ILXNAH Resume
+# Resume
 
 This repository contains the source for my personal resume website powered by Hugo and the Resume theme.
 
