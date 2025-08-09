@@ -19,4 +19,4 @@ to preview the site locally.
 
 ## License
 
-MIT License © 2025 ILXNAH
+This project is licensed under the [MIT License](./LICENSE) © 2025 ILXNAH.
