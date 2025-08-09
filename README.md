@@ -11,9 +11,9 @@ This repository contains the source for my personal resume website powered by Hu
 
 Run:
 
-\`\`\`bash
+```bash
 hugo server
-\`\`\`
+```
 
 to preview the site locally.
 
