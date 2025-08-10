@@ -1,0 +1,17 @@
+{{- $skills := site.Data.skills -}}
+{{- if $skills }}
+<div class="skills">
+  {{- range $skills }}
+  <section class="skill-group" style="margin-bottom:1rem;">
+    <p style="font-weight:600; color:#495057; margin-bottom:0.25rem;">{{ .category }}</p>
+    <ul style="list-style:none; padding:0; margin:0; display:flex; flex-wrap:wrap; gap:.5rem;">
+      {{- range .items }}
+      <li style="border:1px solid #e0e0e0; border-radius:.5rem; padding:.2rem .5rem; font-size:.95rem;">
+        {{ . }}
+      </li>
+      {{- end }}
+    </ul>
+  </section>
+  {{- end }}
+</div>
+{{- end }}

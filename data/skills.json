@@ -1,0 +1,14 @@
+[
+  { "category": "Cloud Computing", "items": ["Azure (FW, GW, VM)", "OpenStack", "VMware ESXi Hyper-V", "AWS WorkSpaces", "AWS S3", "AWS CloudTrail"] },
+  { "category": "Virtualization", "items": [ "WSL 2", "VMware Workstation", "Oracle VirtualBox"] },
+  { "category": "Containerization", "items": ["Docker", "Kubernetes", "Minikube", "OpenShift", "Minishift"] },
+  { "category": "Scripting & Automation", "items": ["Python", "Bash", "PowerShell", "jq", "AI-assisted coding", "Prompt engineering"] },
+  { "category": "Operating Systems", "items": ["Linux", "Windows"] },
+  { "category": "Monitoring & Diagnostics", "items": ["Zabbix", "ELK", "AppDynamics", "Dynatrace", "TrueSight", "Wireshark", "tcpdump"] },
+  { "category": "Networking", "items": ["CCNA-level concepts", "nginx", "Apache"] },
+  { "category": "Security", "items": ["IAM (AD, Entra ID)", "PAM (CyberArk)", "CyberChef", "Cryptography (sym/asym, hashing)", "YARA", "VPN", "Postman", "Burp Suite", "SIEM (Splunk)", "msfvenom", "nc", "gobuster", "nikto"] },
+  { "category": "CI/CD", "items": ["GitHub Actions", "Jenkins"] },
+  { "category": "Version Control", "items": ["Git", "Visual Studio"] },
+  { "category": "Database", "items": ["MySQL", "Oracle", "NoSQL (Redis)", "KQL (Kibana)", "DQL (Obsidian)"] },
+  { "category": "ITSM Tools", "items": ["Atlassian", "Remedy", "HPSM", "ServiceNow", "Salesforce"] }
+]

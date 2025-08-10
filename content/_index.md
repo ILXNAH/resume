@@ -16,5 +16,12 @@ I bring a broad technical skill set and clear, proactive communication to every 
 &nbsp;
 
 {{< languages >}}
+&nbsp;  
+&nbsp;
+
+<h1 class="intro-title">Skills</h1>
+
+{{< skills >}}
+&nbsp;
 
 {{< employment >}}
