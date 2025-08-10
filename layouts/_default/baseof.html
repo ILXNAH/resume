@@ -45,8 +45,15 @@
     {{ block "main" . }}
       {{ .Content }}
     {{ end }}
-    <section>
-      {{ with $.GitInfo }}{{ with $.Site.Params.gitCommitPrefix }}<span style="color: #999999;;">Page content generated from commit: <a href="{{ . }}/{{ $.GitInfo.AbbreviatedHash }}" title="log: {{ $.GitInfo.Subject }}">{{ $.GitInfo.AbbreviatedHash }}</a>{{ end }}{{end}}
+    <section style="padding-left: 3rem;">
+      {{ with $.Site.Home.GitInfo }}{{ with $.Site.Params.gitCommitPrefix }}
+        <span style="color: #999999;">
+          Page content generated from commit:
+          <a href="{{ . }}/{{ $.Site.Home.GitInfo.AbbreviatedHash }}" title="log: {{ $.Site.Home.GitInfo.Subject }}">
+            {{ $.Site.Home.GitInfo.AbbreviatedHash }}
+          </a>
+        </span>
+      {{ end }}{{ end }}
     </section>
   </div>
   <!-- Bootstrap core JavaScript -->
