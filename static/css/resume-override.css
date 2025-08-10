@@ -80,3 +80,19 @@ hr.m-0 {
   margin-top: .25rem !important;
   margin-bottom: 2rem !important;
 }
+
+#skills {
+  padding-top: 3rem;
+}
+
+/* Remove the theme's extra separator under the final section */
+.resume-section:last-of-type {
+  border-bottom: 0 !important;
+}
+
+footer.site-footer {
+  border-top: 1px solid rgba(0,0,0,.12);
+  margin-top: 2rem;
+  margin-left: 3rem;
+  margin-right: 3rem;
+}

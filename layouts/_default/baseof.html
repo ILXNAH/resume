@@ -45,16 +45,6 @@
     {{ block "main" . }}
       {{ .Content }}
     {{ end }}
-    <section style="padding-left: 3rem;">
-      {{ with $.Site.Home.GitInfo }}{{ with $.Site.Params.gitCommitPrefix }}
-        <span style="color: #999999;">
-          Page content generated from commit:
-          <a href="{{ . }}/{{ $.Site.Home.GitInfo.AbbreviatedHash }}" title="log: {{ $.Site.Home.GitInfo.Subject }}">
-            {{ $.Site.Home.GitInfo.AbbreviatedHash }}
-          </a>
-        </span>
-      {{ end }}{{ end }}
-    </section>
   </div>
   <!-- Bootstrap core JavaScript -->
   <script src="https://code.jquery.com/jquery-3.6.4.slim.min.js" integrity="sha256-a2yjHM4jnF9f54xUQakjZGaqYs/V1CYvWpoqZzC2/Bw=" crossorigin="anonymous"></script>
@@ -78,5 +68,6 @@
   {{ block "footerfiles" . }}
 
   {{ end }}
+  {{ partial "footer.html" . }}
 </body>
 </html>
