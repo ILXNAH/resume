@@ -6,3 +6,6 @@ theme = "resume"
       unsafe = true
 
 enableGitInfo = true
+
+[params]
+gitCommitPrefix = "https://github.com/ILXNAH/resume/commit"
