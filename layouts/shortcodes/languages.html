@@ -1,0 +1,18 @@
+<hr class="m-0">
+<section id="languages" class="resume-section">
+  <div class="resume-section-content">
+    <h2>Languages</h2>
+
+    {{- $langs := (index site.Data "languages") -}}
+    {{- $sorted := sort $langs "level" "desc" -}}
+    {{- if gt (len $sorted) 0 -}}
+      <ul>
+      {{- range $sorted }}
+        <li><strong>{{ .name }}</strong> — {{ index .keywords 0 }}</li>
+      {{- end }}
+      </ul>
+    {{- else -}}
+      <p style="opacity:.7;">No language data found. Ensure <code>data/languages.json</code> exists.</p>
+    {{- end }}
+  </div>
+</section>
