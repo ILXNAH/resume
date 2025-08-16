@@ -1,13 +1,13 @@
 [
   {
-    "degree": "Bachelor's (pause)",
+    "degree": "Bachelor's (paused)",
     "range": "2022–2023",
     "institution": "Ambis University",
     "field": "Economics and Management",
     "location": "Prague, Czechia"
   },
   {
-    "degree": "Bachelor's (transfer)",
+    "degree": "Bachelor's (transferred)",
     "range": "2017–2019",
     "institution": "University of Economics in Prague",
     "field": "Faculty of Management",
@@ -21,7 +21,7 @@
     "location": "Prague-Satalice, Czechia"
   },
   {
-    "degree": "High school (transfer)",
+    "degree": "High school (transferred)",
     "range": "2009–2015",
     "institution": "Schiller‑Gymnasium",
     "field": "STEM",
