@@ -1,9 +1,8 @@
 <footer class="site-footer" style="padding:1rem; text-align:center; font-size:0.9rem; color:#495057;">
-  {{ with $.Site.Home.GitInfo }}{{ with $.Site.Params.gitCommitPrefix }}
+  {{ with getenv "HUGO_LATEST_COMMIT" }}
     Page content generated from commit:
-    <a href="{{ . }}/{{ $.Site.Home.GitInfo.AbbreviatedHash }}" 
-       title="log: {{ $.Site.Home.GitInfo.Subject }}">
-      {{ $.Site.Home.GitInfo.AbbreviatedHash }}
+    <a href="{{ $.Site.Params.gitCommitPrefix }}/{{ . }}">
+      {{ . }}
     </a>
-  {{ end }}{{ end }}
+  {{ end }}
 </footer>

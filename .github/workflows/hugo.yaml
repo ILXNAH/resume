@@ -49,6 +49,9 @@ jobs:
       # Install Node.js dependencies
       - name: Install Node.js dependencies
         run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
+      # Get latest commit SHA for footer
+      - name: Get latest commit SHA
+        run: echo "HUGO_LATEST_COMMIT=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
       # Build with Hugo
       - name: Build with Hugo
         env:
