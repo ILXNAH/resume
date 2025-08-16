@@ -11,7 +11,9 @@
             <div class="d-flex justify-content-between flex-wrap">
               <div>
                 <strong>{{ .degree }}</strong><br>
-                {{ .institution }}
+                {{ .institution }}<br>
+                {{- with .field -}}{{ . }}{{- end -}}<br>
+                {{- with .notes -}}{{ . }}{{- end -}}
               </div>
               <div class="text-muted">
                 {{ .range }}

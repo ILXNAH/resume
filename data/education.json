@@ -1,26 +1,31 @@
 [
   {
-    "degree": "Bc.: Business Economics and Management",
+    "degree": "Bachelor's (paused)",
+    "range": "2022–2023",
     "institution": "Ambis University",
-    "range": "2022–2023 (paused)",
-    "location": "Prague-Řepy, Czech Republic"
+    "field": "Economics and Management",
+    "location": "Prague, Czechia"
   },
   {
-    "degree": "Bachelor studies — Faculty of Management (transferred)",
-    "institution": "Prague University of Economics and Business",
+    "degree": "Bachelor's (transferred)",
     "range": "2017–2019",
-    "location": "Jindřichův Hradec, Czech Republic"
+    "institution": "University of Economics in Prague",
+    "field": "Faculty of Management",
+    "location": "Jindřichův Hradec, Czechia"
   },
   {
-    "degree": "High School Diploma",
-    "institution": "Business Academy Prague",
+    "degree": "High school diploma",
     "range": "2016–2017",
-    "location": "Prague, Czech Republic"
+    "institution": "OA Praha",
+    "field": "Business and Administration",
+    "location": "Prague-Satalice, Czechia"
   },
   {
-    "degree": "Gymnasium — Mathematics & Natural Sciences (transferred)",
-    "institution": "Friedrich‑Schiller‑Gymnasium",
+    "degree": "High school (transferred)",
     "range": "2009–2015",
+    "institution": "Friedrich‑Schiller‑Gymnasium",
+    "field": "STEM",
+    "notes": "State scholarship in bilingual program",
     "location": "Pirna, Germany"
   }
 ]
