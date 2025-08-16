@@ -106,3 +106,11 @@ footer.site-footer {
   box-shadow: 0 0 0 3px rgba(0,0,0,.25),               /* visible ring */
               0 2px 6px rgba(0,0,0,.2);               /* soft depth */
 }
+
+/* Credentials section spacing:
+   Add top space before each subsection heading (H2) except the first one,
+   so "Certificates" and "Courses" sit ~3rem below the previous block.
+   The first H2 ("Certifications") remains flush at the top. */
+#credentials .resume-section-content h2:not(:first-of-type) {
+  margin-top: 3rem;
+}
