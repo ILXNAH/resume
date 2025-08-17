@@ -21,3 +21,5 @@ Prague-based engineer with 6+ years of IT experience in Linux-heavy environments
 {{< employment >}}
 
 {{< education >}}
+
+{{< credentials >}}
