@@ -114,3 +114,23 @@ footer.site-footer {
 #credentials .resume-section-content h2:not(:first-of-type) {
   margin-top: 3rem;
 }
+
+/* Intro paragraph (index):
+   - Full justification for square edges
+   - Last line stays left-aligned (not stretched)
+   - Hyphenation is DISABLED to avoid word splitting at line ends
+   - Preserve words (no mid-word breaks) and avoid forced wraps
+   - Use 'text-wrap: pretty' to encourage nicer breakpoints */
+.justify-square{
+  text-align: justify;
+  text-align-last: left;     /* keep last line ragged-left */
+  -webkit-hyphens: none;     /* disable hyphenation in Safari */
+  -ms-hyphens: none;         /* disable hyphenation in old Edge */
+  hyphens: none;             /* disable hyphenation in other browsers */
+  word-break: normal;        /* don't break inside words */
+  overflow-wrap: normal;     /* don't force breaks */
+  text-wrap: pretty;         /* prefer aesthetically nicer line breaks */
+}
+
+/* Remove any previous ::after helper (we aren't justifying the last line) */
+.justify-square::after{ content: none; }
