@@ -3,26 +3,23 @@
     <h2>Education</h2>
 
     {{- $schools := (index site.Data "education") -}}
-    {{- if gt (len $schools) 0 -}}
+    {{- if gt (len $schools) 0 }}
+      {{- $sorted := sort $schools "range" "desc" -}}
       <div class="education-list">
-        {{- $sorted := sort $schools "range" "desc" -}}
         {{- range $sorted }}
           <div class="mb-4">
             <div class="d-flex justify-content-between flex-wrap">
               <div>
                 <strong>{{ .degree }}</strong><br>
                 {{ .institution }}<br>
-                {{- with .field -}}{{ . }}{{- end -}}<br>
-                {{- with .notes -}}{{ . }}{{- end -}}
+                {{- with .field }}{{ . }}<br>{{ end -}}
+                {{- with .notes }}{{ . }}<br>{{ end -}}
+                {{- with .location }}{{ . }}{{ end -}}
               </div>
               <div class="text-muted">
                 {{ .range }}
               </div>
             </div>
-
-            {{- if .location }}
-              <div class="mt-1">{{ .location }}</div>
-            {{- end }}
           </div>
         {{- end }}
       </div>
