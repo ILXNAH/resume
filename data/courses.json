@@ -1,0 +1,30 @@
+[
+  {
+    "title": "PRINCE2® Webinar Series",
+    "subtitle": "Mastering Project Delivery",
+    "issuer": "PeopleCert",
+    "badge": "https://github.com/ILXNAH/ILXNAH/blob/main/peoplecert-badges/prince2-project-delivery.png",
+    "date": "2024-12"
+  },
+  {
+    "title": "PRINCE2® Webinar Series",
+    "subtitle": "Mastering Project Priorities",
+    "issuer": "PeopleCert",
+    "badge": "https://github.com/ILXNAH/ILXNAH/blob/main/peoplecert-badges/prince2-project-priorities.png",
+    "date": "2024-11"
+  }, 
+    {
+    "title": "ITIL® Webinar Series",
+    "subtitle": "Practice Guides",
+    "issuer": "PeopleCert",
+    "badge": "https://github.com/ILXNAH/ILXNAH/blob/main/peoplecert-badges/itil4-practice-guides.png",
+    "date": "2024-10"
+  },
+  {
+    "title": "ITIL® Webinar Series",
+    "subtitle": "AI in ITSM",
+    "issuer": "PeopleCert",
+    "badge": "https://github.com/ILXNAH/ILXNAH/blob/main/peoplecert-badges/itil-ai-in-itsm.png",
+    "date": "2024-06"
+  }
+]

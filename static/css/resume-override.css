@@ -134,3 +134,7 @@ footer.site-footer {
 
 /* Remove any previous ::after helper (we aren't justifying the last line) */
 .justify-square::after{ content: none; }
+
+/* Credentials: tighten per-line spacing and remove extra per-line gaps */
+#credentials .text-muted { line-height: 1.35 !important; }
+#credentials .text-muted > div + div { margin-top: 0 !important; }
