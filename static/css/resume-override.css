@@ -138,3 +138,68 @@ footer.site-footer {
 /* Credentials: tighten per-line spacing and remove extra per-line gaps */
 #credentials .text-muted { line-height: 1.35 !important; }
 #credentials .text-muted > div + div { margin-top: 0 !important; }
+
+/* === Badge Lightbox === */
+.ilx-lightbox {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: rgba(0,0,0,.6);              /* softer dim */
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);              /* subtle blur behind */
+  z-index: 2000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .18s ease, visibility .18s ease;
+  padding: 2rem;
+}
+
+/* two-phase open: visible first (no flash), then fade in */
+.ilx-lightbox.is-active { visibility: visible; }
+.ilx-lightbox.is-open   { opacity: 1; }
+
+.ilx-lightbox__dialog {
+  position: relative;
+  max-width: min(92vw, 1100px);
+  max-height: 92vh;
+  transform: translateY(6px) scale(.985);
+  opacity: 0;
+  transition: transform .18s ease, opacity .18s ease;
+}
+
+.ilx-lightbox.is-open .ilx-lightbox__dialog {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+/* Image: truly transparent look + soft silhouette */
+.ilx-lightbox img {
+  display: block;
+  max-width: 100%;
+  max-height: 85vh;
+  background: transparent;
+  border: 0;
+  /* drop-shadow hugs the alpha edges (no rectangle halo) */
+  filter: drop-shadow(0 10px 30px rgba(0,0,0,.45));
+}
+
+/* Close button */
+.ilx-lightbox__close {
+  position: absolute;
+  top: -2.2rem;              /* sits above the image */
+  right: -0.2rem;
+  font-size: 2rem;
+  line-height: 1;
+  color: #fff;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  padding: .25rem;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .ilx-lightbox,
+  .ilx-lightbox__dialog { transition: none !important; }
+}

@@ -107,6 +107,78 @@
 
   {{ end }}
   {{ partial "footer.html" . }}
+  
+  <!-- === Badge Lightbox (HTML) === -->
+  <div id="badge-lightbox" class="ilx-lightbox" aria-hidden="true" role="dialog" aria-label="Badge preview">
+    <div class="ilx-lightbox__dialog">
+      <button class="ilx-lightbox__close" aria-label="Close badge (Esc)">&times;</button>
+      <img id="badge-image" alt="Course badge">
+    </div>
+  </div>
+
+  <!-- === Badge Lightbox (JS) === -->
+  <script>
+  (function () {
+    var lb   = document.getElementById('badge-lightbox');
+    var img  = document.getElementById('badge-image');
+    var btn  = lb.querySelector('.ilx-lightbox__close');
+    var last = null;
+
+    function openLB(src, trigger) {
+      last = trigger || null;
+
+      // Preload so we can animate smoothly
+      var tmp = new Image();
+      tmp.onload = function () {
+        img.src = src;
+
+        // Step 1: make it visible without opacity (prevents layout jump)
+        lb.classList.add('is-active');
+        lb.setAttribute('aria-hidden', 'false');
+
+        // Step 2: next frame -> fade/scale in
+        requestAnimationFrame(function () {
+          lb.classList.add('is-open');
+          btn.focus({ preventScroll: true });
+        });
+      };
+      tmp.src = src;
+    }
+
+    function closeLB() {
+      lb.classList.remove('is-open');
+      lb.setAttribute('aria-hidden', 'true');
+
+      // Wait for fade-out, then hide and clear img
+      setTimeout(function () {
+        lb.classList.remove('is-active');
+        img.removeAttribute('src');
+        if (last) { try { last.focus(); } catch(e){} }
+      }, 180);
+    }
+
+    // Open on clicking a.badge-link
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest('a.badge-link');
+      if (a) {
+        var src = a.dataset.badge || a.getAttribute('href');
+        if (src && src.indexOf('/images/badges/') === 0) {
+          e.preventDefault();
+          openLB(src, a);
+        }
+      }
+      // Click outside dialog closes
+      if (e.target === lb) { closeLB(); }
+    });
+
+    btn.addEventListener('click', closeLB);
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && lb.classList.contains('is-active')) { closeLB(); }
+    });
+  })();
+  </script>
+
 
   <!-- Fade-in after fonts load (with timeout safety) -->
   <script>
