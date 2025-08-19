@@ -1,5 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+  <style>
+  /* Hide everything at first */
+  html { opacity: 0; }
+
+  /* When fonts are ready, fade it in */
+  html.ready {
+    opacity: 1;
+    transition: opacity .2s ease; /* 0.2s fade */
+  }
+</style>
+
+<script>
+  // Wait for both DOM (page structure) and fonts
+  Promise.all([
+    document.fonts ? document.fonts.ready : Promise.resolve(),
+    new Promise(r => document.addEventListener('DOMContentLoaded', r, { once: true }))
+  ]).then(() => {
+    document.documentElement.classList.add('ready');
+  });
+</script>
+
+<noscript>
+  <style>html { opacity: 1 !important }</style>
+</noscript>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
