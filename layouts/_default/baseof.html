@@ -108,19 +108,40 @@
   {{ end }}
   {{ partial "footer.html" . }}
 
-  <!-- Fade-in after fonts load -->
+  <!-- Fade-in after fonts load (with timeout safety) -->
   <script>
-    $(function () {
-      if (document.fonts && document.fonts.ready) {
-        document.fonts.ready.then(function () {
-          document.documentElement.classList.add('ready');
-        }).catch(function () {
-          document.documentElement.classList.add('ready');
-        });
-      } else {
+  (function () {
+    var shown = false;
+    function show() {
+      if (!shown) {
+        shown = true;
         document.documentElement.classList.add('ready');
       }
-    });
+    }
+
+    // Safety: never wait forever for fonts
+    var fallback = setTimeout(show, 1500); // reveal after 1.5s if fonts are slow
+
+    function go() {
+      if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(function () {
+          clearTimeout(fallback);
+          show();
+        }).catch(show);
+      } else {
+        show();
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', go, { once: true });
+    } else {
+      go();
+    }
+
+    // Ultimate safety if everything else finishes
+    window.addEventListener('load', show, { once: true });
+  })();
   </script>
 </body>
 
