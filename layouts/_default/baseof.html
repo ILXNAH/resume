@@ -10,15 +10,6 @@
   }
 </style>
 
-<script>
-  Promise.all([
-    document.fonts ? document.fonts.ready : Promise.resolve(),
-    new Promise(r => document.addEventListener('DOMContentLoaded', r, { once: true }))
-  ]).then(() => {
-    document.documentElement.classList.add('ready');
-  });
-</script>
-
 <noscript>
   <style>html { opacity: 1 !important }</style>
 </noscript>
@@ -109,5 +100,21 @@
 
   {{ end }}
   {{ partial "footer.html" . }}
+
+  <!-- Fade-in after fonts load -->
+  <script>
+    $(function () {
+      if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(function () {
+          document.documentElement.classList.add('ready');
+        }).catch(function () {
+          document.documentElement.classList.add('ready');
+        });
+      } else {
+        document.documentElement.classList.add('ready');
+      }
+    });
+  </script>
 </body>
+
 </html>
