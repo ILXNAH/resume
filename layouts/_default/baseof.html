@@ -73,12 +73,22 @@
     });
   </script>
 
+  <!-- Activate Bootstrap 4 Scrollspy -->
+  <script>
+    $(function () {
+      $('body').scrollspy({
+        target: '#sideNav',
+        offset: 80
+      });
+    });
+  </script>
+
   <!-- Polyfill for Smooth Scrolling -->
   <script src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js" integrity="sha384-EYn4rWu1DHvYD0sSSSbMEtXQmMl58CFJd897806+RT1jJVYbhuZlZMN6yG9nCyFa" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/smoothscroll-anchor-polyfill@1.3.2/dist/index.min.js" integrity="sha384-EY9NBEHCFbZANmPcTm7CgG8OhsFILy0VBLG85pF6OIpP42NVbZVNsFOc23PYTCkB" crossorigin="anonymous"></script>
   
   <!-- Custom scripts for this template -->
-  <script async src="/js/resume.js"></script>
+  <!-- <script async src="/js/resume.js"></script> -->
   {{ if .Site.Params.google.analytics.trackerID }}
     <script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.Params.google.analytics.trackerID }}"></script>
     <script>
