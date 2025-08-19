@@ -1,4 +1,5 @@
 theme = "resume"
+baseURL = "https://ilxnah.github.io/resume/"
 
 [markup]
   [markup.goldmark]
