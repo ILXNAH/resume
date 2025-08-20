@@ -1,5 +1,5 @@
 +++
-title = "Ilona Ixchel Loučková — CV"
+title = "Resume"
 +++
 
 <h1 class="intro-title">Ilona Ixchel Loučková - CV</h1>

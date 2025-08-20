@@ -1,12 +1,16 @@
-theme = "resume"
+title = "Ilona Loučková"
+owner = "Ilona Loučková"
+copyright = "Ilona Loučková"
 baseURL = "https://ilxnah.github.io/resume/"
+theme = "resume"
+languageCode = "en-us"
+enableGitInfo = true
 
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
 
-enableGitInfo = true
-
 [params]
 gitCommitPrefix = "https://github.com/ILXNAH/resume/commit"
+favicon = "/icons/inguz.ico"
