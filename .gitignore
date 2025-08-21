@@ -2,6 +2,7 @@
 /public/
 
 # Hugo cache and resources
+/.hugo_cache/
 /resources/
 
 # Logs
