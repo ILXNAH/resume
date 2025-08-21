@@ -11,12 +11,12 @@ jobs:
       - {uses: peaceiris/actions-hugo@v2, with: {hugo-version: '${{ env.HUGO_VERSION }}', extended: true}}
       - {uses: actions/checkout@v4, with: {submodules: recursive, fetch-depth: 0}}
       - {id: pages, uses: actions/configure-pages@v5}
-      - { uses: actions/cache/restore@v4, with: { path: "${{ env.HUGO_CACHEDIR }}\nresources/_gen",
-          key: "${{ runner.os }}-hugo-${{ env.HUGO_VERSION }}-${{ hashFiles('**/package-lock.json','**/npm-shrinkwrap.json','hugo.toml','hugo.yaml','hugo.json') }}",
+      - { uses: actions/cache/restore@v4, with: { path: "${{ env.HUGO_CACHEDIR }}",
+          key: "${{ runner.os }}-hugo-${{ env.HUGO_VERSION }}-${{ hashFiles('hugo.*','config/**') }}",
           restore-keys: "${{ runner.os }}-hugo-${{ env.HUGO_VERSION }}-\n${{ runner.os }}-hugo-" } }
       - run: 'HUGO_LATEST_COMMIT="$(git rev-parse --short HEAD)" hugo --gc --minify --enableGitInfo --baseURL "${{ steps.pages.outputs.base_url }}/"'
-      - { if: always(), uses: actions/cache/save@v4, with: { path: "${{ env.HUGO_CACHEDIR }}\nresources/_gen",
-          key: "${{ runner.os }}-hugo-${{ env.HUGO_VERSION }}-${{ hashFiles('**/package-lock.json','**/npm-shrinkwrap.json','hugo.toml','hugo.yaml','hugo.json') }}" } }
+      - { if: always(), uses: actions/cache/save@v4, with: { path: "${{ env.HUGO_CACHEDIR }}",
+          key: "${{ runner.os }}-hugo-${{ env.HUGO_VERSION }}-${{ hashFiles('hugo.*','config/**') }}" } }
       - { uses: actions/upload-pages-artifact@v3, with: { path: ./public } }
   deploy:
     runs-on: ubuntu-latest
