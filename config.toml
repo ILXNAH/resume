@@ -5,6 +5,7 @@ baseURL = "https://ilxnah.github.io/resume/"
 theme = "resume"
 languageCode = "en-us"
 enableGitInfo = true
+timeZone = "Europe/Prague"
 
 [markup]
   [markup.goldmark]
