@@ -6,20 +6,22 @@ defaults: {run: {shell: bash}}
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 3
     env: {HUGO_VERSION: 0.141.0, HUGO_ENVIRONMENT: production, HUGO_CACHEDIR: '${{ github.workspace }}/.hugo_cache'}
     steps:
       - {uses: peaceiris/actions-hugo@v2, with: {hugo-version: '${{ env.HUGO_VERSION }}', extended: true}}
       - {uses: actions/checkout@v4, with: {submodules: recursive, fetch-depth: 0}}
       - {id: pages, uses: actions/configure-pages@v5}
-      - { uses: actions/cache/restore@v4, with: { path: "${{ env.HUGO_CACHEDIR }}",
+      - { uses: actions/cache/restore@v4, continue-on-error: true, with: { path: "${{ env.HUGO_CACHEDIR }}",
           key: "${{ runner.os }}-hugo-${{ env.HUGO_VERSION }}-${{ hashFiles('hugo.*','config/**') }}",
           restore-keys: "${{ runner.os }}-hugo-${{ env.HUGO_VERSION }}-\n${{ runner.os }}-hugo-" } }
       - run: 'HUGO_LATEST_COMMIT="$(git rev-parse --short HEAD)" hugo --gc --minify --enableGitInfo --baseURL "${{ steps.pages.outputs.base_url }}/"'
-      - { if: always(), uses: actions/cache/save@v4, with: { path: "${{ env.HUGO_CACHEDIR }}",
+      - { if: always(), uses: actions/cache/save@v4, continue-on-error: true, with: { path: "${{ env.HUGO_CACHEDIR }}",
           key: "${{ runner.os }}-hugo-${{ env.HUGO_VERSION }}-${{ hashFiles('hugo.*','config/**') }}" } }
       - { uses: actions/upload-pages-artifact@v3, with: { path: ./public, retention-days: 90 } }
   deploy:
     runs-on: ubuntu-latest
+    timeout-minutes: 2
     needs: build
     environment: {name: github-pages, url: '${{ steps.deployment.outputs.page_url }}'}
     steps:
