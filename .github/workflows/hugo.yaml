@@ -13,7 +13,8 @@ jobs:
         with: {submodules: recursive, fetch-depth: 0}
       - {id: pages, uses: actions/configure-pages@v5}
       - run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
-      - run: 'HUGO_CACHEDIR="${{ runner.temp }}/hugo_cache" HUGO_ENVIRONMENT=production HUGO_LATEST_COMMIT="$(git rev-parse --short HEAD)" hugo --gc --minify --enableGitInfo --baseURL "${{ steps.pages.outputs.base_url }}/"'
+      - env: {HUGO_CACHEDIR: "${{ runner.temp }}/hugo_cache", HUGO_ENVIRONMENT: production}
+        run: 'HUGO_LATEST_COMMIT="$(git rev-parse --short HEAD)" hugo --gc --minify --enableGitInfo --baseURL "${{ steps.pages.outputs.base_url }}/"'
       - uses: actions/upload-pages-artifact@v3
         with: {path: ./public}
   deploy:
