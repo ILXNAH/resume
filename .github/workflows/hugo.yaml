@@ -1,7 +1,5 @@
 name: Deploy Hugo site to GitHub Pages
-on:
-  push: {branches: [main]}
-  workflow_dispatch:
+on: {push: {branches: [main]}, workflow_dispatch: {}}
 permissions: {contents: read, pages: write, id-token: write}
 concurrency: {group: pages, cancel-in-progress: true}
 defaults: {run: {shell: bash}}
@@ -10,17 +8,12 @@ jobs:
     runs-on: ubuntu-latest
     env: {HUGO_VERSION: 0.141.0}
     steps:
-      - run: |
-          wget -O "$RUNNER_TEMP/hugo.deb" https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
-          && sudo dpkg -i "$RUNNER_TEMP/hugo.deb"
+      - run: 'wget -O "$RUNNER_TEMP/hugo.deb" "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb" && sudo dpkg -i "$RUNNER_TEMP/hugo.deb"'
       - uses: actions/checkout@v4
         with: {submodules: recursive, fetch-depth: 0}
-      - id: pages
-        uses: actions/configure-pages@v5
+      - {id: pages, uses: actions/configure-pages@v5}
       - run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
-      - run: echo "HUGO_LATEST_COMMIT=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
-      - env: {HUGO_CACHEDIR: "${{ runner.temp }}/hugo_cache", HUGO_ENVIRONMENT: production}
-        run: hugo --gc --minify --enableGitInfo --baseURL "${{ steps.pages.outputs.base_url }}/"
+      - run: 'HUGO_CACHEDIR="${{ runner.temp }}/hugo_cache" HUGO_ENVIRONMENT=production HUGO_LATEST_COMMIT="$(git rev-parse --short HEAD)" hugo --gc --minify --enableGitInfo --baseURL "${{ steps.pages.outputs.base_url }}/"'
       - uses: actions/upload-pages-artifact@v3
         with: {path: ./public}
   deploy:
@@ -28,5 +21,4 @@ jobs:
     needs: build
     environment: {name: github-pages, url: '${{ steps.deployment.outputs.page_url }}'}
     steps:
-      - id: deployment
-        uses: actions/deploy-pages@v4
+      - {id: deployment, uses: actions/deploy-pages@v4}
