@@ -57,28 +57,14 @@
     {{ end }}
   </div>
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="{{ "js/vendor/jquery-3.6.4.slim.min.js" | absURL }}"></script>
-  <script src="{{ "js/vendor/bootstrap.bundle-4.5.3.min.js" | absURL }}"></script>
-  
-  <!-- Auto-collapse mobile navbar menu after clicking a link (requires jQuery + Bootstrap collapse) -->
-  <script>
-    $(function () {
-      $('.navbar-collapse .nav-link').on('click', function () {
-        $('.navbar-collapse').collapse('hide');
-      });
-    });
-  </script>
+  <!-- Bootstrap core JavaScript (deferred, keeps order: jQuery -> Bootstrap -> site scripts) -->
+  <script defer src="{{ "js/vendor/jquery-3.6.4.slim.min.js" | absURL }}"></script>
+  <script defer src="{{ "js/vendor/bootstrap.bundle-4.5.3.min.js" | absURL }}"></script>
 
-  <!-- Activate Bootstrap 4 Scrollspy -->
-  <script>
-    $(function () {
-      $('body').scrollspy({
-        target: '#sideNav',
-        offset: 80
-      });
-    });
-  </script>
+  <!-- Site scripts (deferred) -->
+  <script defer src="{{ "js/site/navbar-collapse.js" | absURL }}"></script>
+  <script defer src="{{ "js/site/scrollspy-init.js" | absURL }}"></script>
+  <!-- <script defer src="{{ "js/site/tooltips-init.js" | absURL }}"></script> -->
 
   <!-- Custom scripts for this template -->
   <!-- <script async src="/js/resume.js"></script> -->
