@@ -13,4 +13,5 @@ enableGitInfo = true
 
 [params]
 gitCommitPrefix = "https://github.com/ILXNAH/resume/commit"
-favicon = "/icons/inguz.ico"
+favicon = "icons/favicon.ico"
+profileImage = "images/inguz.png"
