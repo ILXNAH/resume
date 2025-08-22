@@ -1,18 +1,20 @@
-# Hugo build output folder
+# Hugo output
 /public/
 
-# Hugo cache and resources
+# Hugo cache & generated
 /.hugo_cache/
 /resources/
 
-# Logs
+# Local drafts (not committed)
+README_draft.md
+
+# Logs & locks
 *.log
 .hugo_build.lock
 
-# OS generated files
+# OS junk
 .DS_Store
 Thumbs.db
 
-# IDE/editor files (optional, add yours if needed)
+# Editor/IDE
 .vscode/
-README_draft.md
