@@ -3,7 +3,7 @@
     "title": "ITIL® 4 Foundation",
     "issuer": "PeopleCert",
     "id": "GR671640645IL",
-    "url": "https://ilxnah.github.io/cv/certs/ITIL-Foundation.pdf",
+    "url": "/docs/credentials/certifications/itil-foundation.pdf",
     "date": "2024-04-15",
     "expires": "2028-04-17"
   },
@@ -12,7 +12,7 @@
     "subtitle": "Agile Foundation and Practitioner, v2", 
     "issuer": "PeopleCert",
     "id": "GR470000444IL",
-    "url": "https://ilxnah.github.io/cv/certs/Prince2-Agile-Expert.pdf",
+    "url": "/docs/credentials/certifications/prince2-agile-expert.pdf",
     "date": "2025-05-16",
     "expires": "2028-05-16",
     "notes": ""
@@ -22,7 +22,7 @@
     "subtitle": "Monitoring and Event Management",
     "issuer": "PeopleCert",
     "id": "GR463000186IL",
-    "url": "https://ilxnah.github.io/cv/certs/ITIL-Monitoring-and-Event-Management.pdf",
+    "url": "/docs/credentials/certifications/itil-monitoring-and-event-management.pdf",
     "date": "2025-04-17",
     "expires": "2028-04-17"
   }
