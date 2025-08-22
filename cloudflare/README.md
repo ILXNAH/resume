@@ -2,7 +2,7 @@
 
 Serves **GitHub Release** PDFs inline under the Pages domain.
 
-- **Source:** `cloudflare/_worker.js`
+- **Source:** [cloudflare/_worker.js](./_worker.js)
 - **Upstream:** `https://github.com/ILXNAH/resume/releases/download/credentials/<file>.pdf`
 - **Public URLs (handled by Worker):**
   - `https://ilxnah.pages.dev/<file>.pdf`  ← preferred, short
@@ -11,7 +11,7 @@ Serves **GitHub Release** PDFs inline under the Pages domain.
 `<type>` can be `certifications`, `certificates`, or `courses` (for pretty URLs only).
 
 ## Deploy (Pages, direct upload)
-1) Create a ZIP containing **only** `_worker.js` at the root.  
+1) Create a ZIP containing **only** [_worker.js](./_worker.js) at the root.  
 2) Cloudflare Dashboard → **Pages** → project `ilxnah` → **Create deployment** → upload ZIP.
 
 Worker sets:
