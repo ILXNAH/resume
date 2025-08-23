@@ -1,7 +1,7 @@
 # Personal Resume Website (Hugo)
 [![Live](https://img.shields.io/badge/-Live%20%E2%86%97-14b8a6?style=flat-square)](https://ilxnah.github.io/resume/)
 [![Build](https://img.shields.io/github/actions/workflow/status/ILXNAH/resume/hugo.yaml?branch=main&label=Build&style=flat-square)](https://github.com/ILXNAH/resume/actions/workflows/hugo.yaml)
-[![Hugo](https://img.shields.io/badge/Hugo-ff4088?style=flat-square)](https://gohugo.io/)
+[![Hugo](https://img.shields.io/badge/Hugo-e03582?style=flat-square&logo=hugo&logoColor=white)](https://gohugo.io/)
 [![Theme](https://img.shields.io/badge/-Resume%20Theme-6f42c1?style=flat-square)](https://github.com/eddiewebb/hugo-resume)
 [![GitHub Pages](https://img.shields.io/badge/-GitHub%20Pages-8b0000?style=flat-square&logo=github&logoColor=white)](https://pages.github.com/)
 [![Cloudflare Worker](https://img.shields.io/badge/-Cloudflare%20Worker-1f2937?style=flat-square&logo=cloudflare&logoColor=F38020)](https://developers.cloudflare.com/workers/)
