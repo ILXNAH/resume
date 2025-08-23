@@ -9,8 +9,7 @@
 [![MIT](https://img.shields.io/static/v1?label=&message=MIT&color=0066cc&style=flat-square&logo=opensourceinitiative&logoColor=white)](LICENSE)
 [![CC BY-NC-ND 4.0](https://img.shields.io/static/v1?label=&message=CC%20BY-NC-ND%204.0&color=555555&style=flat-square&logo=creativecommons&logoColor=white)](LICENSE-CC)
 
-Personal resume site built with Hugo (Resume theme), deployed to GitHub Pages;  
-credential PDFs are served inline via a Cloudflare Pages Worker.
+Static résumé site with selected work, skills, and certifications; PDFs render inline in the browser.
 
 ## Table of Contents
 - [Features](#features)
