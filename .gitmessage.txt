@@ -1,0 +1,5 @@
+type(scope): short concise summary
+
+- bullet point 1: what changed
+- bullet point 2: why it changed / extra details
+- bullet point 3: optional notes (no filenames or paths)

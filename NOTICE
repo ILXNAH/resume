@@ -1,0 +1,22 @@
+NOTICE  
+======
+
+This project includes code and content under multiple licenses:
+
+1. ILXNAH Code and Configuration  
+   Licensed under the [MIT License](./LICENSE).
+
+2. ILXNAH Content and Personal Data  
+   Licensed under the [CC BY-NC-ND 4.0 License](./LICENSE-CC).
+
+3. Third-Party Components  
+   - Fonts:  
+     [Open Sans](https://fonts.google.com/specimen/Open+Sans) and [Saira](https://fonts.google.com/specimen/Saira) — licensed under the [SIL Open Font License, Version 1.1](https://openfontlicense.org/).  
+   - Hugo Resume Theme:  
+     Licensed under its own terms (see [themes/resume/LICENSE.md](./themes/resume/LICENSE.md)).  
+   - Other assets:  
+     Follow the licenses from their respective sources.
+
+-------------------------------------------------------------------------------
+This NOTICE file is provided for informational purposes only and does not
+modify the terms of any license.
