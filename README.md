@@ -4,8 +4,8 @@
 [![Hugo](https://img.shields.io/badge/Hugo-ff4088?style=flat-square)](https://gohugo.io/)
 [![Theme](https://img.shields.io/badge/-Resume%20Theme-6f42c1?style=flat-square)](https://github.com/eddiewebb/hugo-resume)
 [![GH Pages](https://img.shields.io/badge/-GH%20Pages-red?style=flat-square)](https://pages.github.com/)
-[![CF Worker](https://img.shields.io/badge/-CF%20Worker-F38020?style=flat-square)](https://developers.cloudflare.com/pages/functions/)
-[![Credentials](https://img.shields.io/badge/-Credentials-yellow?style=flat-square&logo=adobeacrobatreader&logoColor=white)](https://github.com/ILXNAH/resume/releases/tag/credentials)
+[![Cloudflare Worker](https://img.shields.io/badge/-Cloudflare%20Worker-1f2937?style=flat-square&logo=cloudflare&logoColor=F38020)](https://developers.cloudflare.com/workers/)
+[![Credentials](https://img.shields.io/badge/-Credentials-%2386198f?style=flat-square&logo=adobeacrobatreader&logoColor=white)](https://github.com/ILXNAH/resume/releases/tag/credentials)
 [![MIT](https://img.shields.io/static/v1?label=&message=MIT&color=0066cc&style=flat-square)](LICENSE)
 [![CC BY-NC-ND 4.0](https://img.shields.io/static/v1?label=&message=CC%20BY-NC-ND%204.0&color=999999&style=flat-square)](LICENSE-CC)
 
