@@ -1,5 +1,5 @@
 # Personal Resume Website (Hugo)
-[![Live](https://img.shields.io/badge/-Live%20%E2%86%97-14b8a6?style=flat-square)](https://ilxnah.github.io/resume/)
+[![Live](https://img.shields.io/badge/-Live%20%E2%86%97-0d9488?style=flat-square)](https://ilxnah.github.io/resume/)
 [![Build](https://img.shields.io/github/actions/workflow/status/ILXNAH/resume/hugo.yaml?branch=main&label=Build&style=flat-square)](https://github.com/ILXNAH/resume/actions/workflows/hugo.yaml)
 [![Hugo](https://img.shields.io/badge/Hugo-e03582?style=flat-square&logo=hugo&logoColor=white)](https://gohugo.io/)
 [![Theme](https://img.shields.io/badge/-Resume%20Theme-6f42c1?style=flat-square)](https://github.com/eddiewebb/hugo-resume)
@@ -7,7 +7,7 @@
 [![Cloudflare Worker](https://img.shields.io/badge/-Cloudflare%20Worker-1f2937?style=flat-square&logo=cloudflare&logoColor=F38020)](https://developers.cloudflare.com/workers/)
 [![Credentials](https://img.shields.io/badge/-Credentials-%2386198f?style=flat-square&logo=adobeacrobatreader&logoColor=white)](https://github.com/ILXNAH/resume/releases/tag/credentials)
 [![MIT](https://img.shields.io/static/v1?label=&message=MIT&color=0066cc&style=flat-square)](LICENSE)
-[![CC BY-NC-ND 4.0](https://img.shields.io/static/v1?label=&message=CC%20BY-NC-ND%204.0&color=999999&style=flat-square)](LICENSE-CC)
+[![CC BY-NC-ND 4.0](https://img.shields.io/static/v1?label=&message=CC%20BY-NC-ND%204.0&color=555555&style=flat-square)](LICENSE-CC)
 
 Personal resume site built with Hugo (Resume theme), deployed to GitHub Pages;  
 credential PDFs are served inline via a Cloudflare Pages Worker.
