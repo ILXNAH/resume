@@ -3,10 +3,14 @@
     <span class="d-block d-lg-none">{{ .Site.Params.firstName }} {{ .Site.Params.lastName }}</span>
     <span class="d-none d-lg-block">
       {{- $img := .Site.Params.profileImage | default "images/inguz.png" -}}
+      {{- $w := .Site.Params.profileImageWidth | default 32 -}}
+      {{- $h := .Site.Params.profileImageHeight | default 32 -}}
       <img
-        class="img-fluid img-profile mx-auto mb-2"
+        class="img-profile mx-auto mb-2"
         src="{{ $img | absURL }}"
         alt="Logo"
+        width="{{ $w }}" height="{{ $h }}"
+        loading="eager" decoding="async" fetchpriority="high"
       >
     </span>
   </a>

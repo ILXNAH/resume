@@ -103,9 +103,11 @@ footer.site-footer {
 /* Brand image above the nav.html menu: kill theme border & edit size*/
 #sideNav img.img-profile {
   border: 0 !important;
+  display:block;
   width: 32px !important;
+  height: 32px !important;
+  object-fit:cover;
   max-width: none !important;
-  height: auto !important;
 }
 
 /* Credentials section spacing:

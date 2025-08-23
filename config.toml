@@ -13,6 +13,8 @@ timeZone = "Europe/Prague"
       unsafe = true
 
 [params]
-gitCommitPrefix = "https://github.com/ILXNAH/resume/commit"
-favicon = "icons/favicon.ico"
-profileImage = "images/inguz.png"
+  gitCommitPrefix = "https://github.com/ILXNAH/resume/commit"
+  favicon = "icons/favicon.ico"
+  profileImage = "images/inguz.png"
+  profileImageWidth = 32
+  profileImageHeight = 32
