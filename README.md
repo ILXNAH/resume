@@ -6,8 +6,8 @@
 [![GitHub Pages](https://img.shields.io/badge/-GitHub%20Pages-8b0000?style=flat-square&logo=github&logoColor=white)](https://pages.github.com/)
 [![Cloudflare Worker](https://img.shields.io/badge/-Cloudflare%20Worker-1f2937?style=flat-square&logo=cloudflare&logoColor=F38020)](https://developers.cloudflare.com/workers/)
 [![Credentials](https://img.shields.io/badge/-Credentials-%2386198f?style=flat-square&logo=adobeacrobatreader&logoColor=white)](https://github.com/ILXNAH/resume/releases/tag/credentials)
-[![MIT](https://img.shields.io/static/v1?label=&message=MIT&color=0066cc&style=flat-square)](LICENSE)
-[![CC BY-NC-ND 4.0](https://img.shields.io/static/v1?label=&message=CC%20BY-NC-ND%204.0&color=555555&style=flat-square)](LICENSE-CC)
+[![MIT](https://img.shields.io/static/v1?label=&message=MIT&color=0066cc&style=flat-square&logo=opensourceinitiative&logoColor=white)](LICENSE)
+[![CC BY-NC-ND 4.0](https://img.shields.io/static/v1?label=&message=CC%20BY-NC-ND%204.0&color=555555&style=flat-square&logo=creativecommons&logoColor=white)](LICENSE-CC)
 
 Personal resume site built with Hugo (Resume theme), deployed to GitHub Pages;  
 credential PDFs are served inline via a Cloudflare Pages Worker.
