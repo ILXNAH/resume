@@ -170,4 +170,4 @@ Please refer to each license file for the full terms.
 - **Includes (non-exhaustive):** `content/`, `data/` (JSON entries), `static/images/`, `static/icons/`, and certificates/credentials in GitHub Releases.  
 
 ### Third-Party Components
-This project also uses third-party components that are subject to their own licenses. For details on those components (e.g., fonts, Hugo Resume theme) and a full breakdown of licensing scopes, see the [NOTICE](./NOTICE) file.
+This project uses third-party components that are subject to their own licenses. For details on those components (e.g., fonts, Hugo Resume theme) and a full breakdown of licensing scopes, see the [NOTICE](./NOTICE) file.
