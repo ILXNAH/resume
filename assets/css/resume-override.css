@@ -100,16 +100,6 @@ footer.site-footer {
 /* Primary brand color (sidebar/nav stripe) */
 .bg-primary { background-color: #FF8DC9 !important; }  /* pink */
 
-/* Brand image above the nav.html menu: kill theme border & edit size*/
-#sideNav img.img-profile {
-  border: 0 !important;
-  display:block;
-  width: 32px !important;
-  height: 32px !important;
-  object-fit:cover;
-  max-width: none !important;
-}
-
 /* Credentials section spacing:
    Add top space before each subsection heading (H2) except the first one,
    so "Certificates" and "Courses" sit ~3rem below the previous block.
