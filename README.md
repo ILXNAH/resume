@@ -15,6 +15,12 @@ Static résumé site with selected work, skills, and certifications; PDFs render
 - [Features](#features)
 - [Technologies Used](#technologies-used)
 - [Theming & Assets](#theming--assets)
+  - [Theme (submodule) & safe customization](#theme-submodule--safe-customization)
+  - [Navbar brand icon (`profileImage`)](#navbar-brand-icon-profileimage)
+  - [CSS (self-hosted)](#css-self-hosted)
+  - [Fonts (self-hosted; third-party)](#fonts-self-hosted-third-party)
+  - [JavaScript (self-hosted)](#javascript-self-hosted)
+  - [Icons & Favicons](#icons--favicons)
 - [Local Dev](#local-dev)
 - [Build & Deploy](#build--deploy)
 - [PDF Hosting](#pdf-hosting)
@@ -30,6 +36,7 @@ Static résumé site with selected work, skills, and certifications; PDFs render
 - Deployed on **GitHub Pages**
 - PDFs via **GitHub Releases**, proxied inline by a **Cloudflare Pages Worker**
 - **Hugo Resume** theme with custom tweaks
+- Config-driven **navbar brand icon** (SVG by default) with intrinsic width/height, cumulative layout shift (CLS)–safe, and accessible labels from `params.brandName` (fallback `.Site.Title`) — see [Navbar brand icon](#navbar-brand-icon-profileimage)
 
 - **Self-hosted assets (no external CSS/JS CDNs)**
   - **CSS:** all styles live in `assets/css/`, built via Hugo and served from this site
@@ -48,28 +55,45 @@ Static résumé site with selected work, skills, and certifications; PDFs render
 - Fonts: [Open Sans](https://fonts.google.com/specimen/Open+Sans), [Saira](https://fonts.google.com/specimen/Saira)
 
 ## Theming & Assets
-- **Theme (submodule) & safe customization**
-  - Upstream theme lives in `themes/resume/` (git submodule). Avoid editing it directly; use local templates for easy updates.
-    - Layout overrides: `layouts/_default/`, `layouts/partials/`
-    - Shortcodes used by the resume sections: `layouts/shortcodes/` (e.g., `credentials.html`, `education.html`, `employment.html`, `languages.html`, `skills.html`)
 
-- **CSS (self-hosted)**
+### Theme (submodule) & safe customization
+- Upstream theme lives in `themes/resume/` (git submodule). Don’t edit it directly.
+- Override via local templates:
+  - Layouts: `layouts/_default/`, `layouts/partials/`
+  - Shortcodes: `layouts/shortcodes/` (e.g., `credentials.html`, `education.html`, `employment.html`, `languages.html`, `skills.html`)
+
+### Navbar brand icon (`profileImage`)
+- Config-driven and CLS-safe (intrinsic `width`/`height` in HTML; defaults to 32×32 if unset).
+- **Default:** `static/images/profileImage.svg`
+- **Labels:** desktop `alt` and mobile label use `params.brandName` (fallback `.Site.Title`) set in [`config.toml`](./config.toml).
+- **Failsafe:** `object-fit: contain; object-position: center`.
+- **Config example:**
+
+  ```toml
+  [params]
+    brandName = "Ilona Loučková"
+    profileImage = "images/profileImage.svg"
+    profileImageWidth = 32
+    profileImageHeight = 32
+  ```
+
+### CSS (self-hosted)
   - Site styles in `assets/css/`:
     - `fonts.css` → `@font-face` declarations for local fonts
     - `resume-override.css`, `tweaks.css` → your safe override layers (don’t patch the theme files)
     - Vendor CSS in `assets/css/vendor/`
   - Built via **Hugo Pipes** into a single, minified, fingerprinted bundle (see [**Features**](#features)).
 
-- **Fonts (self-hosted; third-party)**
+### Fonts (self-hosted; third-party)
   - Directories: `static/fonts/OpenSans/`, `static/fonts/Saira/`
   - Referenced from `assets/css/fonts.css` via `@font-face`
   - Licensing: **SIL OFL 1.1** — see **[NOTICE](./NOTICE)**
 
-- **JavaScript (self-hosted)**
+### JavaScript (self-hosted)
   - Site scripts in `static/js/`; vendor scripts in `static/js/vendor/`
   - No external JS CDNs (served locally).
 
-- **Icons & Favicons**
+### Icons & Favicons
   - Favicons & manifests: `static/icons/` (`favicon.ico`, `site.webmanifest`, etc.)
   - Template tags for icons live in `layouts/partials/favicon.html` — update filenames there if you replace assets.
 
@@ -84,7 +108,7 @@ Run:
   hugo server -D --disableFastRender
   ```
 
-Open: [http://localhost:1313/resume/](http://localhost:1313/resume/) (with `baseURL = "/resume/"` set in `config.toml`)
+Open: [http://localhost:1313/resume/](http://localhost:1313/resume/) (with `baseURL = "/resume/"` set in [`config.toml`](./config.toml))
 
 ## Build & Deploy
 Deployed via **GitHub Pages** (see [`.github/workflows/hugo.yaml`](.github/workflows/hugo.yaml))
@@ -100,19 +124,19 @@ Deployed via **GitHub Pages** (see [`.github/workflows/hugo.yaml`](.github/workf
    - **Build:** install Hugo Extended, checkout with submodules, baseURL injected by Pages
    - **Deploy:** upload build artifact, then deploy via GitHub Pages
 
-- **Change-gating:** build/deploy runs only when site files change (`assets/`, `content/`, `data/`, `layouts/`, `static/`, `themes/`, `config.toml`, or `.github/workflows/**`), or when manually dispatched.
+- **Change-gating:** build/deploy runs only when site files change (`assets/`, `content/`, `data/`, `layouts/`, `static/`, `themes/`, [`config.toml`](./config.toml), or `.github/workflows/**`), or when manually dispatched.
 
 - **Hugo install & version pinning:** CI uses `peaceiris/actions-hugo@v2` (Extended), with the version pinned by the `HUGO_VERSION` env.
 
 - **Cache:** restores/saves `HUGO_CACHEDIR` between runs to speed builds.  
-  Cache key: `${{ runner.os }}-hugo-${{ env.HUGO_VERSION }}-${{ hashFiles('config.toml') }}` (invalidates when OS/Hugo version or `config.toml` changes).
+  Cache key: `${{ runner.os }}-hugo-${{ env.HUGO_VERSION }}-${{ hashFiles('config.toml') }}` (invalidates when OS/Hugo version or [`config.toml`](./config.toml) changes).
 
 - **Artifact & retention:** the built site (`/public`) is uploaded via `actions/upload-pages-artifact@v3` with **90-day** retention, then deployed by `actions/deploy-pages@v4`.
 
 - **Concurrency:** `concurrency: { group: pages, cancel-in-progress: true }` prevents overlapping deployments.
 
 - **Traceability:** the site footer shows “Page content generated from commit …” and links to the exact Git commit used for that page.
-   - Ensure `enableGitInfo = true` in `config.toml`, and set `fetch-depth: 0` on `actions/checkout` in CI so commit metadata is available.
+   - Ensure `enableGitInfo = true` in [`config.toml`](./config.toml), and set `fetch-depth: 0` on `actions/checkout` in CI so commit metadata is available.
 
 ## PDF Hosting
 PDF files (e.g., certificates) are stored as **GitHub Release assets** (tag `credentials`) and served inline via a **Cloudflare Pages Worker** under the Pages domain.
@@ -161,7 +185,7 @@ Please refer to each license file for the full terms.
 
 ### Code
 - **Source code, scripts, and configuration files** are licensed under the [MIT License](./LICENSE).  
-- **Includes (non-exhaustive):** `config.toml`, `.github/`, `.vscode/`, `assets/` (CSS/JS), `layouts/`, `static/js/`, `cloudflare/`, and other build/config files.  
+- **Includes (non-exhaustive):** [`config.toml`](./config.toml), `.github/`, `.vscode/`, `assets/` (CSS/JS), `layouts/`, `static/js/`, `cloudflare/`, and other build/config files.  
 - **Excludes:** submodules (e.g., `themes/resume/`), generated output such as `public/` and `resources/_gen/`.
 
 ### Content

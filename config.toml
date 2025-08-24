@@ -14,8 +14,10 @@ timeZone = "Europe/Prague"
 
 [params]
   gitCommitPrefix = "https://github.com/ILXNAH/resume/commit"
+
   favicon = "icons/favicon.ico"
+
+  brandName = "Ilona Loučková"
   profileImage = "images/inguz.png"
   profileImageWidth = 32
   profileImageHeight = 32
-  brandName = "Ilona Loučková"
