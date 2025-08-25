@@ -13,11 +13,12 @@ timeZone = "Europe/Prague"
       unsafe = true
 
 [params]
-  gitCommitPrefix = "https://github.com/ILXNAH/resume/commit"
-
-  favicon = "icons/favicon.ico"
-
-  brandName = "Ilona Loučková"
-  profileImage = "images/inguz.png"
+  brandName = "Ilona Loučková"                                        # Display name shown in the navbar and metadata (falls back to site title if omitted)
+  profileImage = "images/inguz.png"                                   # Navbar/profile image and its rendered dimensions
   profileImageWidth = 32
   profileImageHeight = 32
+
+  resumePdfUrl = "https://ilxnah.pages.dev/ilona-louckova.pdf"        # Canonical URL to your CV/PDF (proxied for inline viewing).
+  favicon = "icons/favicon.ico"                                       # Favicon path (served from /static)
+
+  gitCommitPrefix = "https://github.com/ILXNAH/resume/commit"         # Prefix for commit links shown on the site (GitHub commit URL base)
