@@ -100,6 +100,13 @@ footer.site-footer {
 /* Primary brand color (sidebar/nav stripe) */
 .bg-primary { background-color: #FF8DC9 !important; }  /* pink */
 
+/* CV badge uses the secondary accent defined in config.toml*/
+.navbar .badge-cv {
+  background: var(--accent-secondary);
+  color: var(--accent-secondary-contrast);
+  font-size:.85rem;
+}
+
 /* Credentials section spacing:
    Add top space before each subsection heading (H2) except the first one,
    so "Certificates" and "Courses" sit ~3rem below the previous block.
