@@ -17,8 +17,12 @@ timeZone = "Europe/Prague"
   profileImage = "images/inguz.png"                                   # Navbar/profile image and its rendered dimensions
   profileImageWidth = 32
   profileImageHeight = 32
-
   resumePdfUrl = "https://ilxnah.pages.dev/ilona-louckova.pdf"        # Canonical URL to your CV/PDF (proxied for inline viewing).
   favicon = "icons/favicon.ico"                                       # Favicon path (served from /static)
-
   gitCommitPrefix = "https://github.com/ILXNAH/resume/commit"         # Prefix for commit links shown on the site (GitHub commit URL base)
+
+[params.colors]
+  # Custom secondary theme accent
+  secondary = "#C072FF"                                             # or: "rgb(192,114,255)"
+  secondaryContrast = "#000000"                                     # text color on top of the accent
+  
