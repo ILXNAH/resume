@@ -24,13 +24,13 @@
         <a class="nav-link js-scroll-trigger" href="#about">About me</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link js-scroll-trigger" href="#languages">Languages</a></li>
+        <a class="nav-link js-scroll-trigger" href="#languages">Languages</a>
       </li>
       <li class="nav-item">
         <a class="nav-link js-scroll-trigger" href="#skills">Technical Skills</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link js-scroll-trigger" href="#employment">Employment History</a></li>
+        <a class="nav-link js-scroll-trigger" href="#employment">Employment History</a>
       </li>
       <li class="nav-item">
         <a class="nav-link js-scroll-trigger" href="#education">Education</a>
@@ -38,6 +38,13 @@
       <li class="nav-item">
         <a class="nav-link js-scroll-trigger" href="#credentials">Credentials</a>
       </li>
+      {{- with .Site.Params.resumePdfUrl }}
+        <li class="nav-item">
+          <a class="nav-link js-cv-link" href="{{ . | safeURL }}" type="application/pdf" aria-label="Open CV (PDF)" title="Open CV (PDF)">
+             <span class="badge badge-pill badge-cv">PDF</span>
+          </a>
+        </li>
+      {{- end }}
       {{ range .Site.Params.sections }}
       <li class="nav-item">
         <a class="nav-link js-scroll-trigger" href="#{{ . }}">{{ . | i18n }}</a>
