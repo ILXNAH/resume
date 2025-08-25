@@ -28,6 +28,9 @@
   <!-- Add CSS smooth scrolling (replaces polyfills sourced from unpkg.com)  -->
   <style>html{scroll-behavior:smooth}</style>
 
+  <!-- Theme color variables from config.toml -->
+  <style>:root{--accent-secondary: {{ .Site.Params.colors.secondary }}; --accent-secondary-contrast: {{ .Site.Params.colors.secondaryContrast }};}</style>
+
   <!-- Hugo Pipes: custom styles, local fonts & Bootstrap -->
   {{- $bundle := slice
       (resources.Get "css/vendor/bootstrap-4.5.3.min.css")
@@ -64,6 +67,7 @@
   <!-- Site scripts (deferred) -->
   <script defer src="{{ "js/site/navbar-collapse.js" | absURL }}"></script>
   <script defer src="{{ "js/site/scrollspy-init.js" | absURL }}"></script>
+  <script defer src="{{ "js/site/cv-link-target.js" | absURL }}"></script>
   <!-- <script defer src="{{ "js/site/tooltips-init.js" | absURL }}"></script> -->
 
   <!-- Custom scripts for this template -->
